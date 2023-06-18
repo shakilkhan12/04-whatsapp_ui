@@ -127,7 +127,61 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: TabBarView(
           children: [
-            Text('Camera'),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Create new contact',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                          hintText: 'First Name', border: OutlineInputBorder()),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                          hintText: 'Last Name', border: OutlineInputBorder()),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                        hintText: 'Mobile Number',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Create Contact',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size.fromHeight(55),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             ListView.builder(
               itemCount: userMessages.length,
               itemBuilder: (BuildContext context, int index) {
@@ -200,7 +254,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.w600, fontSize: 18),
                         ),
                         SizedBox(
-                          height: 6,
+                          height: 4,
                         ),
                         Text('Tab to add status update'),
                       ],
